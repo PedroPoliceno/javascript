@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+</head>
+<body>
+    <h1>Qual a sua Nacionalidade?</h1>
+    Nacionalidade:<input type="text" name="nac" id="nac">
+    <input type="button" value="Verificar" onclick="clicar()">
+    <div id="res">
+    </div>
+    <script>
+        function clicar(){
+            var país = document.getElementById('nac')
+            var res = document.getElementById('res')
+            var p = String(país.value) 
+            if(p.toLowerCase() == 'brasil'){
+                res.innerHTML = `<p>Vivendo em ${p}, você é <strong>Brasileiro.</strong></p>`
+            }else{
+                res.innerHTML = `<p>Vivendo em ${p}, você é <strong>Estrangeiro.</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
