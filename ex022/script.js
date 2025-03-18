@@ -20,9 +20,28 @@ function isLista(n, l){
 }
 
 function add(){
+    res.innerHTML = ''
     if(isNumero(num.value) && !isLista(num.value, valores)) {
-        window.alert('Tudo ok')
+        valores.push(Number(num.value))
+
+        var item = document.createElement('option')
+        item.text = `Valor ${num.value} foi adicionado.`
+        lista.appendChild(item)
     }else{
         window.alert('Valor ínvalido ou já encontrado na lista!')
+    }
+
+    num.value = ''
+    num.focus()
+}
+
+function fin(){
+    if(valores.length == 0){
+        window.alert('Escreva um número antes de finalizar')
+    }else{
+        var tot = valores.length
+
+        res.innerHTML = ''
+        res.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados</p>`
     }
 }
