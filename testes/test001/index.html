@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Árvore DOM</h1>
+    <p>Testando o DOM</p>
+    <p id="p2">Para isso vou escrever alguns parágrafos!</p>
+
+    <script>
+        var para = document.getElementsByTagName("p")[0]
+        document.write("No parágrafo acima está escrito " + para.innerText)
+        document.getElementById('p2').innerText = 'Olá'
+        document.getElementsByTagName('h1')[0].style.background = 'green'
+        document.body.style.background = 'bege'
+        para.style.color = 'purple'
+    </script>
+</body>
+</html>
