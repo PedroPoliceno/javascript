@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de DOM</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 700px;
+            height: 200px;
+
+            border: 1px solid gray;
+            border-radius: 5px;
+            
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Somando valores</h1>
+        <p>Escreva dois números abaixo para a soma.</p>
+
+        <label for="n1">Número 1:</label>
+        <input type="number" name="n1" id="n1" required min="1">
+
+        <label for="n2">Número 2:</label>
+        <input type="number" name="n2" id="n2" required min="1">
+
+        <input type="button" value="Calcular" id="botao">
+
+        <div id="resposta">...</div>
+
+        <script>
+            document.getElementById('botao').addEventListener('click', clicou)
+
+            function clicou() {
+                
+                var n1 = Number(document.getElementById('n1').value)
+                var n2 = Number(document.getElementById('n2').value)
+                var resposta = document.getElementById('resposta')
+
+                if(n1 == 0 || n2 == 0){
+                    window.alert("Escreva um número maior ou menor a zero")
+                }else{
+                    var resultado = n1 + n2
+
+                    resposta.innerHTML = `<p>A soma entre ${n1} e ${n2} é <strong>${resultado}</strong></p>`
+                }
+            }
+        </script>
+    </main>
+</body>
+</html>
